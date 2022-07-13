@@ -1,5 +1,5 @@
 {
-  "name": "abdullah-yahya-blog",
+  "name": "abdullahyahya",
   "version": "1.0.0",
   "description": "",
   "main": ".eleventy.js",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/abdullah-yahya-blog/starter.git"
+    "url": "git+ssh://git@gitlab.com/ab_softevol/abdullahyahya.git"
   },
   "author": "softevol",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/abdullah-yahya-blog/starter/issues"
+    "url": "https://gitlab.com/ab_softevol/abdullahyahya/issues"
   },
-  "homepage": "https://gitlab.com/abdullah-yahya-blog/starter#readme"
+  "homepage": "https://gitlab.com/ab_softevol/abdullahyahya#readme"
 }

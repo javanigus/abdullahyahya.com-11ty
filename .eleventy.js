@@ -642,7 +642,6 @@ function formatDate(date) {
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("js/**/*.js");
   eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addShortcode("max_width", max_width);
