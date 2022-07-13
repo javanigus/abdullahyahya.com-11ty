@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Menu -->
+  <link rel="stylesheet" href="/css/index.css">
+
+  {% include 'partials/js-detect.njk' %}
+</head>
+<body>
+  {% max_width %}
+  {% responsive %}
+    {% container "100_100_33_33_33" %}
+      {% include 'partials/aside.njk' %}
+    {% end_container %}
+    {% container "85_85_66_66_66", "", "main" %}
+      {% responsive %}
+        {% container "100_100_83_83_83", "", "centered" %}
+          <main>
+            <h2 class="visually-hidden">Last posts</h2>
+            <ul class="list-reset posts">
+            {% for post in pagination.items %}
+              <li class="post">
+                <div class="post__block">
+                  <div class="spacer-40"></div>
+                  <article>
+                    <header>
+                      {% responsive %}
+                        {% container "80_80_80_80_80", "", "centered" %}
+                          <h3 class="h1">
+                            <a href="/{{ post.slug | slug}}/">
+                            {{ post.title.rendered | safe }}
+                            </a>
+                          </h3>
+                        {% end_container %}
+                      {% endresponsive %}
+                    </header>
+
+                    <footer>
+                      <div class="post__info">
+                        {% responsive %}
+                          {% container "80_80_80_80_80", "", "centered" %}
+                            {% responsive "ul", "tags list-reset" %}
+                              {% responsive "li", "tag" %}
+                                {% pictureSvgPng "img/icons/calendar.svg", "Posted on: ", "20", "16" %}
+                                <a class="secondary__link" href="#">
+                                  <time>{{ post.modified }}</time>
+                                </a>
+                              {% endresponsive %}
+                              {% responsive "li", "tag" %}
+                                {% pictureSvgPng "img/icons/user.svg", "Author on: ", "20", "16" %}
+                                <a class="secondary__link" href="#">
+                                  Abdullah Yahya
+                                </a>
+                              {% endresponsive %}
+                              {% responsive "li", "tag" %}
+                                {% pictureSvgPng "img/icons/folder.svg", "Categories on: ", "20", "16" %}
+                                <a class="secondary__link" href="#">
+                                  Home Improvement
+                                </a>
+                              {% endresponsive %}
+                            {% endresponsive %}
+                          {% end_container %}
+                        {% endresponsive %}
+                      </div>
+                    </footer>
+                    {% responsive %}
+                      {% container "80_80_80_80_80", "", "centered" %}
+                        <div class="spacer-32"></div>
+                        <a href="/{{ post.slug | slug}}/">
+                        <img src="{{ post.jetpack_featured_media_url }}" alt="{{ post.title.rendered }}">
+                        </a>
+                        <div class="spacer-40"></div>
+                      {% end_container %}
+                    {% endresponsive %}
+                  </article>
+                </div>
+              </li>
+            {% endfor %}
+            </ul>
+          </main>
+          {% include 'partials/pagination.njk' %}
+          {% include 'partials/footer.njk' %}
+        {% end_container %}
+      {% endresponsive %}
+    {% end_container %}
+  {% endresponsive %}
+  {% end_max_width %}
+  <script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "Background" : {
+    "color" : "#FFFFFF",
+    "label" : "#000000"
+  },
+  "Surface" : {
+    "1" : {
+      "color" : "#FFFFFF",
+      "label" : "#000000"
+    },
+    "2" : {
+      "color" : "rgba(255,255,255,0.7)",
+      "label" : "#000000"
+    },
+    "3" : {
+      "color" : "#F7F7F7",
+      "label" : "#000000"
+    },
+    "4" : {
+      "color" : "#656565",
+      "label" : "#000000"
+    }
+  },
+  "Border": {
+    "1": {
+      "fallback": {
+        "color" : "#EAEAEA",
+        "label" : "#000000"
+      },
+      "main": {
+        "color" : "rgba(51, 51, 51, 0.1)",
+        "label" : "#000000"
+      }
+    },
+    "2": {
+      "color" : "#000000",
+      "label" : "#FFFFFF"
+    },
+    "3": {
+      "color" : "#CCCCCC",
+      "label" : "#000000"
+    }
+  },
+  "On Background" : {
+    "color" : "#000000",
+    "label" : "#FFFFFF"
+  },
+  "On Surface" : {
+    "1": {
+      "color" : "#000000",
+      "label" : "#FFFFFF"
+    },
+    "2": {
+      "color" : "#333333",
+      "label" : "#FFFFFF"
+    },
+    "3": {
+      "color" : "#32373C",
+      "label" : "#FFFFFF"
+    },
+    "4": {
+      "color" : "#6A778B",
+      "label" : "#FFFFFF"
+    }
+  },
+  "Grey": {
+    "50": {
+      "color" : "#F8F8F8",
+      "label" : "#000000"
+    },
+    "300": {
+      "color" : "#DCDCDE",
+      "label" : "#000000"
+    },
+    "400": {
+      "fallback": {
+        "color" : "#C1C1C1",
+        "label" : "#FFFFFF"
+      },
+      "main": {
+        "color" : "rgba(51, 51, 51, 0.3)",
+        "label" : "#FFFFFF"
+      }
+    },
+    "500": {
+      "color" : "#949494",
+      "label" : "#FFFFFF"
+    },
+    "550": {
+      "color" : "#999999",
+      "label" : "#FFFFFF"
+    },
+    "600": {
+      "fallback": {
+        "color" : "#707070",
+        "label" : "#FFFFFF"
+      },
+      "main": {
+        "color" : "rgba(51, 51, 51, 0.7)",
+        "label" : "#FFFFFF"
+      }
+    }
+  },
+  "Red": {
+    "color" : "#d63638",
+    "label" : "#FFFFFF"
+  }
+}

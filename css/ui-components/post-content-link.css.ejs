@@ -1,0 +1,38 @@
+.post__content a {
+  color: <%= colors.Red.color %>;
+  border: 1px solid transparent;
+}
+
+.post__content a:hover,
+.post__content .hover a {
+  color: <%= colors.Red.color %>;
+  border-bottom: 1px solid <%= colors["On Surface"]["2"].color %>;
+}
+
+.post__content a:focus,
+.post__content .focus a {
+  outline: 2px solid <%= colors["Grey"]["400"].fallback.color %>;
+}
+
+.post__content a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.post__content a:focus-visible {
+  outline: 2px solid <%= colors["Grey"]["400"].fallback.color %>;
+}
+
+@media(min-width: 0px) {
+  .post__content a:focus,
+  .post__content .focus a {
+    outline: 2px solid <%= colors["Grey"]["400"].main.color %>;
+  }
+
+  .post__content a:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  .post__content a:focus-visible {
+    outline: 2px solid <%= colors["Grey"]["400"].main.color %>;
+  }
+}

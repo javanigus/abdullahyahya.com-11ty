@@ -1,0 +1,17 @@
+.primary-button {
+  cursor: pointer;
+  border: 1px solid  <%= colors['On Surface']['3'].color %>;
+}
+
+.primary-button:hover,
+.primary-button:active,
+.primary-button:focus,
+.hover .primary-button,
+.active .primary-button,
+.focus .primary-button {
+  cursor: pointer;
+  background-color: <%= colors.Grey["600"].fallback.color %>;
+  border:1px solid <%= colors.Grey["600"].fallback.color %>;
+  color: <%= colors.Surface["1"].color %>;
+  outline: none;
+}

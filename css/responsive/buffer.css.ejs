@@ -1,0 +1,57 @@
+<% for(let bufferType in buffer) { %>
+  <% for(let property in buffer[bufferType]) { %>
+    <% let selector = '.buffer-' + bufferType %>
+    <% if(property === 'padding') { %>
+      <%= selector %> {
+        <%= property %> : <%= buffer[bufferType][property] %>px;
+      }
+    <% } %>
+
+    <% if(property == 'desktop' && Object.keys(buffer[bufferType][property]).length > 0) { %>
+      @media (min-width: <%= responsive.MEDIA.desktop %>px) {
+        <%= selector %> {
+        <% for(let key in buffer[bufferType][property]) { %>
+          <%= key %>: <%= buffer[bufferType][property][key]%>px;
+        <% } %>
+        }
+      }
+    <% } %>
+
+    <% if(property == 'laptop' && Object.keys(buffer[bufferType][property]).length > 0) { %>
+      @media (min-width: <%= responsive.MEDIA.laptop %>px) {
+        <%= selector %> {
+        <% for(let key in buffer[bufferType][property]) { %>
+          <%= key %>: <%= buffer[bufferType][property][key]%>px;
+        <% } %>
+        }
+      }
+    <% } %>
+
+
+    <% if(property == 'tablet' && Object.keys(buffer[bufferType][property]).length > 0) { %>
+      @media (min-width: <%= responsive.MEDIA.tablet %>px) {
+        <%= selector %> {
+        <% for(let key in buffer[bufferType][property]) { %>
+          <%= key %>: <%= buffer[bufferType][property][key]%>px;
+        <% } %>
+        }
+      }
+    <% } %>
+
+
+    <% if(property == 'phone' && Object.keys(buffer[bufferType][property]).length > 0) { %>
+      @media (min-width: <%= responsive.MEDIA.phone %>px) {
+        <%= selector %> {
+        <% for(let key in buffer[bufferType][property]) { %>
+          <%= key %>: <%= buffer[bufferType][property][key]%>px;
+        <% } %>
+        }
+      }
+    <% } %>
+  <% } %>
+<% } %>
+
+.gap {
+  padding-top: 0;
+  padding-bottom: 0;
+}

@@ -1,0 +1,45 @@
+<div class="aside">
+  {% responsive %}
+    <aside>
+      {% responsive %}
+        {% container "100_85_100_100_100", "", "centered" %}
+          <div class="aside__inner">
+            {% container "100_100_80_60_60", "", "centered" %}
+              <div class="profile">
+                <div class="profile__avatar">
+                  <picture>
+                    <source media="(min-width: 600px)" type="image/webp" srcset="/img/profile-top-1.webp">
+                    <source type="image/webp" srcset="/img/profile-top-2.webp">
+                    <img src="/img/profile-top-1.jpg" alt="" width="117" height="117">
+                  </picture>
+                </div>
+                <h1 class="profile__name"><a href="/">Abdullah Yahya</a></h1>
+                <div class="burger">
+                </div>
+              </div>
+            {% end_container %}
+            <div class="dropdown-container">
+              {% container "80_80_80_60_60", "", "centered" %}
+                <div class="spacer-02"></div>
+                <div class="menu">
+                  <ul class="aside-list list-reset">
+                    {% for link, href in menu["ds-links"] %}
+                      <li>
+                        <a class="aside-link{% if href === page.url %} aside-link--current {% endif %}" href="{{ href }}">{{ link }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <div class="spacer-02"></div>
+              {% end_container %}
+            </div>
+
+            <div class="aside-image">
+              {% picturePngWebp "img/profile-1.png", "", "413", "757" %}
+            </div>
+          </div>
+        {% end_container %}
+      {% endresponsive %}
+    </aside>
+  {% endresponsive %}
+</div>

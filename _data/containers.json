@@ -1,0 +1,79 @@
+{
+  "100_50_33_33_33": {
+    "default": 1,
+    "phone": 0.50,
+    "tablet": 0.33333,
+    "laptop": 0.33333,
+    "desktop": 0.33333
+  },
+  "100_100_33_33_33": {
+    "default": 1,
+    "phone": 1,
+    "tablet": 0.33333,
+    "laptop": 0.33333,
+    "desktop": 0.33333
+  },
+  "85_85_66_66_66": {
+    "default": 0.85,
+    "phone": 0.85,
+    "tablet": 0.66666,
+    "laptop": 0.66666,
+    "desktop": 0.66666
+  },
+  "100_100_83_83_83": {
+    "default": 1,
+    "phone": 1,
+    "tablet": 0.83333,
+    "laptop": 0.83333,
+    "desktop": 0.83333
+  },
+  "80_80_80_80_80": {
+    "default": 0.8,
+    "phone": 0.8,
+    "tablet": 0.8,
+    "laptop": 0.8,
+    "desktop": 0.8
+  },
+  "80_80_80_60_60": {
+    "default": 0.8,
+    "phone": 0.8,
+    "tablet": 0.8,
+    "laptop": 0.6,
+    "desktop": 0.6
+  },
+  "100_100_80_60_60": {
+    "default": 1,
+    "phone": 1,
+    "tablet": 0.8,
+    "laptop": 0.6,
+    "desktop": 0.6
+  },
+  "100_85_100_100_100": {
+    "default": 1,
+    "phone": 0.85,
+    "tablet": 1,
+    "laptop": 1,
+    "desktop": 1
+  },
+  "100_50_50_50_50": {
+    "default": 1,
+    "phone": 0.50,
+    "tablet": 0.50,
+    "laptop": 0.50,
+    "desktop": 0.50
+  },
+  "100_100_100_100_100": {
+    "default": 1,
+    "phone": 1,
+    "tablet": 1,
+    "laptop": 1,
+    "desktop": 1
+  },
+  "100_33_33_33_33": {
+    "default": 1,
+    "phone": 0.33333,
+    "tablet": 0.33333,
+    "laptop": 0.33333,
+    "desktop": 0.33333
+  }
+}

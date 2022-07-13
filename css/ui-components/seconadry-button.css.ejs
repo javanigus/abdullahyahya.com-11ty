@@ -1,0 +1,17 @@
+.secondary-button {
+  cursor: pointer;
+  border:1px solid  <%= colors.Grey["500"].color %>;
+}
+
+.secondary-button:hover,
+.secondary-button:active,
+.secondary-button:focus,
+.hover .secondary-button,
+.active .secondary-button,
+.focus .secondary-button {
+  cursor: pointer;
+  background-color: <%= colors.Grey["600"].fallback.color %>;
+  border:1px solid <%= colors.Grey["600"].fallback.color %>;
+  color: <%= colors.Surface["1"].color %>;
+  outline: none;
+}

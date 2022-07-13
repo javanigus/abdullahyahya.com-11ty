@@ -1,0 +1,16 @@
+<div class="header">
+  <header>
+    {% max_width "", "header__container" %}
+      <div class="header__logo logo" role="banner">
+        <a href="/">
+        {% set alt = site.name + " logo" %}
+          {% pictureSvgPng "img/logo.svg", alt, "95", "20" %}
+        </a>
+      </div>
+      <div class="header__main-menu-burger burger"></div>
+      <div class="header__main-menu-container" id="main-menu-container">
+        {% include './menu.njk' %}
+      </div>
+    {% end_max_width %}
+  </header>
+</div>

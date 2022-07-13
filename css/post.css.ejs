@@ -1,0 +1,56 @@
+.posts {
+}
+
+.post {
+  padding: 3.75% 0;
+}
+
+@media(max-width: <%= responsive.MEDIA.phone -1 %>px) {
+  .post {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.post__block {
+  border-radius: 5px;
+  background-color: <%= colors.Surface["1"].color %>;
+}
+
+.post__info {
+  padding: 32px 0 16px;
+  background-color: <%= colors.Surface["3"].color %>;
+}
+
+.post__buffer {
+  padding: 16px 8px;
+}
+
+.post__buffer img {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.post__content {
+  padding-bottom: 10%;
+}
+
+.post__content img {
+  border-radius: 5px;
+}
+
+.post__content figure {
+  margin: 0 0 20px 0;
+}
+
+.post__content figcaption {
+  margin: 16px 0 8px;
+  text-align: center;
+  color: <%= colors.Grey["600"].fallback.color %>;
+}
+
+@media (max-width: <%= responsive.MEDIA.phone - 1 %>px) {
+  .post__content {
+    margin-top: 3.75%;
+  }
+}

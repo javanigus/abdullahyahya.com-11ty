@@ -1,0 +1,23 @@
+.field {
+  border: 1px solid <%= colors.Grey["500"].color %>;
+  width: 100%;
+}
+
+.field:focus,
+.focus field {
+  outline: none;
+  border: 1px solid <%= colors.Grey["400"].fallback.color %>;
+  background-color: <%= colors.Surface["1"].color %>;
+}
+
+
+@media (min-width: 0px) {
+  .field:focus,
+  .focus .field {
+    border: 1px solid <%= colors.Grey["400"].main.color %>;
+  }
+}
+
+textarea.field {
+  height: 200px;
+}

@@ -1,0 +1,15 @@
+.secondary__link {
+  color: <%= colors.Grey["600"].fallback.color %>;
+}
+
+@media (min-width: 0px) {
+  .secondary__link {
+    color: <%= colors.Grey["600"].main.color %>;
+  }
+}
+
+.secondary__link:hover,
+.hover .secondary__link {
+  color: <%= colors["On Surface"]["2"].color %>;
+  text-decoration: underline;
+}

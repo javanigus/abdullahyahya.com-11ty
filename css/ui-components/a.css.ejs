@@ -1,0 +1,49 @@
+a {
+  color: <%= colors["On Surface"]["1"].color %>;
+  text-decoration: none;
+}
+
+a:hover,
+.hover a {
+  color: <%= colors.Grey["600"].fallback.color %>;
+}
+
+a:focus,
+.focus a {
+  color: <%= colors.Grey["600"].fallback.color %>;
+  outline: 2px solid <%= colors.Grey["400"].fallback.color %>;
+}
+
+a:focus:not(:focus-visible) {
+  color: <%= colors.Grey["600"].fallback.color %>;
+  outline: none;
+}
+
+a:focus-visible {
+  color: <%= colors.Grey["600"].fallback.color %>;
+  outline: 2px solid <%= colors.Grey["400"].fallback.color %>;
+}
+
+
+@media (min-width: 0px) {
+  a:hover,
+  .hover a {
+    color: <%= colors.Grey["600"].main.color %>
+  }
+
+  a:focus,
+  .focus a {
+    color: <%= colors.Grey["600"].main.color %>;
+    outline: 2px solid <%= colors.Grey["400"].main.color %>;
+  }
+
+  a:focus:not(:focus-visible) {
+    color: <%= colors.Grey["600"].main.color %>;
+    outline: none;
+  }
+  
+  a:focus-visible {
+    color: <%= colors.Grey["600"].main.color %>;
+    outline: 2px solid <%= colors.Grey["400"].main.color %>;
+  }
+}

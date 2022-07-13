@@ -1,0 +1,24 @@
+{
+  "name": "abdullah-yahya-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.8",
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-img": "^2.0.1"  
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/abdullah-yahya-blog/starter.git"
+  },
+  "author": "softevol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/abdullah-yahya-blog/starter/issues"
+  },
+  "homepage": "https://gitlab.com/abdullah-yahya-blog/starter#readme"
+}

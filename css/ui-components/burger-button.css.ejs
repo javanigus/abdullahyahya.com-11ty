@@ -1,0 +1,38 @@
+
+.burger-button {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  background-color: <%= colors.Surface["1"].color %>;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;base64,<%- include("../../img/buttons/burger-base64.svg.ejs"); %>");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.burger-button--opened {
+    background-image: url("data:image/svg+xml;base64,<%- include("../../img/buttons/cross-base64.svg.ejs"); %>");
+}
+
+.burger-button:hover,
+.burger-button:active,
+.burger-button:focus,
+.hover .burger-button,
+.active .burger-button,
+.focus .burger-button {
+    outline: none;
+    border: 2px solid <%= colors.Grey["400"].main.color %>;
+}
+
+
+@media(max-width: <%= responsive.MEDIA.phone %>px) {
+    .burger-button {
+        width: 42px;
+        height: 42px;
+        background-size: 16px 16px;
+    }
+}

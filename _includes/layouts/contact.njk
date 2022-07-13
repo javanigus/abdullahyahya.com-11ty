@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Menu -->
+  <link rel="stylesheet" href="/css/index.css">
+
+  {% include 'partials/js-detect.njk' %}
+</head>
+<body>
+  {% max_width %}
+  {% responsive %}
+    {% container "100_100_33_33_33" %}
+      {% include 'partials/aside.njk' %}
+    {% end_container %}
+    {% container "85_85_66_66_66", "", "main" %}
+      {% responsive %}
+        {% container "100_100_83_83_83", "", "centered" %}
+        <main>
+          <div class="post">
+            <div class="post__block">
+              <div class="spacer-40"></div>
+              <div class="post__content">
+                {% responsive %}
+                  {% container "80_80_80_80_80", "", "centered" %}
+                    <h1>Contact</h1>
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                      {% responsive %}
+                        {% container "100_50_50_50_50" %}
+                          <label for="name">
+                            <b>Name</b> (required)
+                          </label>
+                          <input class="field" type="text" id="name" name="name" require="">
+                          <div class="spacer-24"></div>
+                        {% end_container %}
+                        {% container "100_50_50_50_50" %}
+                        {% end_container %}
+                        {% container "100_50_50_50_50" %}
+                          <label for="email">
+                            <b>Email</b> (required)
+                          </label>
+                          <input class="field" type="email" id="email" name="email" require="">
+                          <div class="spacer-24"></div>
+                        {% end_container %}
+                        {% container "100_50_50_50_50" %}
+                        {% end_container %}
+                        {% container "100_100_100_100_100" %}
+                          <label for="comment">
+                            <b>Comment</b> (required)
+                          </label>
+                          <textarea class="field" id="comment" name="comment"></textarea>
+                          <div class="spacer-24"></div>
+                          <button class="primary-button" type="submit">SUBMIT</button>
+                          <div class="spacer-24"></div>
+                        {% end_container %}
+                      {% endresponsive %}
+                    </form>
+                    {% include 'partials/share-block.njk' %}
+                  {% end_container %}
+                {% endresponsive %}
+              </div>
+            </div>
+          </div>
+        </main>
+        {% include 'partials/footer.njk' %}
+        {% end_container %}
+      {% endresponsive %}
+    {% end_container %}
+  {% endresponsive %}
+  {% end_max_width %}
+  <script src="/js/index.js"></script>
+</body>
+</html>

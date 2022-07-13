@@ -1,0 +1,31 @@
+<% for(let i = 0; i < Object.keys(containers).length; i++) { %>
+  <% if(i !== Object.keys(containers).length - 1) { %>.container-<%= Object.keys(containers)[i] %>,<% } else { %>.container-<%= Object.keys(containers)[i] %><% } %><% } %> {
+    float: left;
+  }
+  
+  <% for(let containerType in containers) { %><% for(let media in containers[containerType]) { %><% if(media == 'default') { %>
+  .container-<%= containerType %> {
+    width: <%= (containers[containerType][media]*100).toFixed(2) %>%;
+  }<% } %><% if(media == 'phone') { %>
+  @media (min-width: <%= responsive.MEDIA.phone %>px) {
+    .container-<%= containerType %> {
+      width: <%= (containers[containerType][media]*100).toFixed(2) %>%;
+    }
+  }<% } %><% if(media == 'tablet') { %>
+  @media (min-width: <%= responsive.MEDIA.tablet %>px) {
+    .container-<%= containerType %> {
+      width: <%= (containers[containerType][media]*100).toFixed(2) %>%;
+    }
+  }<% } %><% if(media == 'laptop') { %>
+  @media (min-width: <%= responsive.MEDIA.laptop %>px) {
+    .container-<%= containerType %> {
+      width: <%= (containers[containerType][media]*100).toFixed(2) %>%;
+    }
+  }<% } %><% if(media == 'desktop') { %>
+  @media (min-width: <%= responsive.MEDIA.desktop %>px) {
+    .container-<%= containerType %> {
+      width: <%= (containers[containerType][media]*100).toFixed(2) %>%;
+    }
+  }<% } %>
+    <% } %>
+  <% } %>

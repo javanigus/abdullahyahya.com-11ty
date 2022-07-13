@@ -1,0 +1,178 @@
+<!Doctype html>
+<html lang="{{ site.language }}">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Design-system: assets for {{ site.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/design-system.css">
+
+    {% include 'partials/js-detect.njk' %}
+  </head>
+  <body class="assets design-system">
+    {% max_width %}
+      {% responsive %}
+        {% container "100_100_33_33_33" %}
+          {% include 'partials/ds-aside.njk' %}
+        {% end_container %}
+        {% container "85_85_66_66_66", "", "main" %}
+          {% responsive %}
+            {% container "100_100_83_83_83", "", "centered" %}
+              <div class="main">
+                <main>
+                  <section>
+                    <div class="post">
+                      <div class="post__block">
+                        <div class="spacer-40"></div>
+                        {% responsive %}
+                          {% container "80_80_80_80_80", "", "centered" %}
+                          {% for el, medias in typography %}
+                          {% if (el !== 'body') %}
+
+                          {% buffer %}
+                          <div class="typography-block">
+                            <div class="typography-block__element">
+                              {% set regExp = r/[\s.,%]/g %}
+                              {% if (el[0] !== '.') %}
+                              <{{ el }} style="text-transform: uppercase;" class="{{ el.replace(regExp, '') }}">{{ el }}</{{ el }}>
+                              {% else %}
+                              <div style="text-transform: uppercase;" class="{{ el.replace(regExp, '') }}">{{ el }}</div>
+                              {% endif %}
+                            </div>
+                            <div class="typography-block__definitions responsive">
+                              <div class="typography-block__definitions-item responsive">
+                                  <p class="label">Typeface: </p>
+                                  <p class="value">{{ medias.default['font-family'] }}</p>
+                              </div>
+                              <div class="typography-block__definitions-item responsive">
+                                  <p class="label">Weight: </p>
+                                  <p class="value">{{ medias.default['font-weight'] }}</p>  
+                              </div>
+                              <div class="typography-block__definitions-item responsive">
+                                  <p class="label">Case: </p>
+                                  <p class="value">{{ medias.default['text-transform'] }}</p>  
+                                </div>
+                            </div>
+                            <div class="buffer-x">
+                              <div class="typography-block__divider"></div>
+                            </div>
+                            <div class="typography-block__parameters responsive">
+                              <div class="typography-block__parameters-item">
+                                <div style="padding-top: 4px"></div>
+                                <table class="typography-block__parameters-table">
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                      </th>
+                                      <th>
+                                        {% pictureSvgPng "img/icons/desktop.svg", "desktop", "32", "32" %}
+                                      </th>
+                                      <th>
+                                        {% pictureSvgPng "img/icons/laptop.svg", "desktop", "32", "32" %}
+                                      </th>
+                                      <th>
+                                        {% pictureSvgPng "img/icons/tablet.svg", "desktop", "32", "32" %}
+                                      </th>
+                                      <th>
+                                        {% pictureSvgPng "img/icons/phone.svg", "desktop", "32", "32" %}
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th class="label-small">Font size</th>
+                                      <td class="value" data-title="Phone">
+                                        {{ medias.phone['font-size'] or medias.default['font-size'] }}
+                                      </td>
+                                      <td class="value" data-title="Tablet">
+                                        {{ medias.tablet['font-size'] or medias.default['font-size'] }}
+                                      </td>
+                                      <td class="value" data-title="Laptop">
+                                        {{ medias.laptop['font-size'] or medias.default['font-size'] }}
+                                      </td>
+                                      <td class="value" data-title="Desktop">
+                                        {{ medias.desktop['font-size'] or medias.default['font-size'] }}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th class="label-small">Line height</th>
+                                      <td class="value" data-title="Phone">
+                                        {{ medias.phone['line-height'] or medias.default['line-height'] }}
+                                      </td>
+                                      <td class="value" data-title="Tablet">
+                                        {{ medias.tablet['line-height'] or medias.default['line-height'] }}
+                                      </td>
+                                      <td class="value" data-title="Laptop">
+                                        {{ medias.laptop['line-height'] or medias.default['line-height'] }}
+                                      </td>
+                                      <td class="value" data-title="Desktop">
+                                        {{ medias.desktop['line-height'] or medias.default['line-height'] }}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th class="label-small">Word spacing</th>
+                                      <td class="value" data-title="Phone">
+                                        {{ medias.phone['word-spacing'] or medias.default['word-spacing'] or 0 }}
+                                      </td>
+                                      <td class="value" data-title="Tablet">
+                                        {{ medias.tablet['word-spacing'] or medias.default['word-spacing'] or 0 }}
+                                      </td>
+                                      <td class="value" data-title="Laptop">
+                                        {{ medias.laptop['word-spacing'] or medias.default['word-spacing'] or 0 }}
+                                      </td>
+                                      <td class="value" data-title="Desktop">
+                                        {{ medias.desktop['word-spacing'] or medias.default['word-spacing'] or 0 }}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th class="label-small">Letter spacing</th>
+                                      <td class="value" data-title="Phone">
+                                        {{ medias.phone['letter-spacing'] or medias.default['letter-spacing'] or 0 }}
+                                      </td>
+                                      <td class="value" data-title="Tablet">
+                                        {{ medias.tablet['letter-spacing'] or medias.default['letter-spacing'] or 0 }}
+                                      </td>
+                                      <td class="value" data-title="Laptop">
+                                        {{ medias.laptop['letter-spacing'] or medias.default['letter-spacing'] or 0 }}
+                                      </td>
+                                      <td class="value" data-title="Desktop">
+                                        {{ medias.desktop['letter-spacing'] or medias.default['letter-spacing'] or 0 }}
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div style="padding-top: 4px"></div>
+                              </div>
+                              <div class="typography-block__parameters-item">
+                                <div class="typography-block__element">
+                                  {% if (el[0] !== '.') %}
+                                  <{{ el }} class="{{ el.replace(regExp, '') }}">The quick brown fox jump</{{ el }}>
+                                  {% else %}
+                                  <div class="{{ el.replace(regExp, '') }}">The quick brown fox jump</div>
+                                  {% endif %}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {% end_buffer %}
+                          
+                          {% endif %}
+                          {% endfor %}
+                          {% end_container %}
+                        {% endresponsive %}
+                        <div class="spacer-40"></div>
+                      </div>
+                    </div>
+                  </section>
+                </main>
+              </div>
+            {% end_container %}
+          {% endresponsive %}
+        {% end_container %}
+      {% endresponsive %}
+    {% end_max_width %}
+    <script src="/js/index.js"></script>
+  </body>
+</html>

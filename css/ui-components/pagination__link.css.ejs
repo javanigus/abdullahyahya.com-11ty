@@ -1,0 +1,110 @@
+
+.pagination__link {
+  display: block;
+  min-height: 64px;
+  line-height: 64px;
+  padding: 0 16px;
+}
+
+.pagination__link--current {
+  font-weight: 700;
+}
+
+.pagination__link--prev,
+.pagination__link--next {
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  background-color: <%= colors["On Surface"]["2"].color %>;
+}
+
+.design-system .pagination__link--prev,
+.design-system .pagination__link--next {
+  position: relative;
+}
+
+.pagination__link--prev img,
+.pagination__link--next img {
+  position: absolute;
+  width: 18px;
+  height: 15px;
+  top: 24px;
+}
+
+.pagination__link--prev img {
+  left: 22px;
+}
+
+.pagination__link--next img {
+  right: 22px;
+}
+
+.pagination__link--prev:hover,
+.pagination__link--next:hover,
+.hover .pagination__link--prev,
+.hover .pagination__link--next,
+.pagination__link--prev:active,
+.pagination__link--next:active,
+.active .pagination__link--prev,
+.active .pagination__link--next {
+  background-color: <%= colors["Grey"]["600"].fallback.color %>;
+}
+
+.pagination__link--prev:focus,
+.pagination__link--next:focus,
+.focus .pagination__link--prev,
+.focus .pagination__link--next {
+  box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].fallback.color %> inset,
+  0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
+  background-color: <%= colors["Grey"]["600"].fallback.color %>;
+  outline: none;
+}
+
+.pagination__link--prev:focus:not(:focus-visible),
+.pagination__link--next:focus:not(:focus-visible) {
+  background-color: <%= colors["Grey"]["600"].fallback.color %>;
+  box-shadow: none;
+  outline: none;
+}
+
+.pagination__link--prev:focus-visible,
+.pagination__link--next:focus-visible {
+  box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].fallback.color %> inset,
+  0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
+  background-color: <%= colors["Grey"]["600"].fallback.color %>;
+  outline: none;
+}
+
+@media(min-width: 0px) {
+  .pagination__link--prev:hover,
+  .pagination__link--next:hover,
+  .hover .pagination__link--prev,
+  .hover .pagination__link--next,
+  .pagination__link--prev:active,
+  .pagination__link--next:active,
+  .active .pagination__link--prev,
+  .active .pagination__link--next {
+    background-color: <%= colors["Grey"]["600"].main.color %>;
+  }
+
+  .pagination__link--prev:focus,
+  .pagination__link--next:focus,
+  .focus .pagination__link--prev,
+  .focus .pagination__link--next {
+    box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].main.color %> inset,
+    0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
+  }
+
+  .pagination__link--prev:focus:not(:focus-visible),
+  .pagination__link--next:focus:not(:focus-visible) {
+    background-color: <%= colors["Grey"]["600"].main.color %>;
+  }
+
+  .pagination__link--prev:focus-visible,
+  .pagination__link--next:focus-visible {
+    box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].main.color %> inset,
+    0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
+  }
+}

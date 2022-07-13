@@ -1,0 +1,10 @@
+.google-search .field {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.google-search button {
+  margin-bottom: 32px;
+}

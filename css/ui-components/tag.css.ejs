@@ -1,0 +1,24 @@
+.tag  {
+  flex-wrap: nowrap;
+  margin: 0 16px 16px 0;
+  float: left;
+}
+
+.tag picture,
+.tag img {
+  display: block;
+  width: 20px;
+  height: 16px;
+  float: left;
+  flex-shrink: 0;
+}
+
+.tag a {
+  display: table-cell;
+}
+
+@supports (display: flex) {
+  .tag a {
+    display: block;
+  }
+}

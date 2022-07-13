@@ -1,0 +1,77 @@
+.aside {
+  position: relative;
+  bottom: 0;
+  background-color: <%= colors.Surface["2"].color %>;
+}
+
+@media (min-width: <%= responsive.MEDIA.tablet %>px) {
+  .aside--fixed {
+    position: fixed;
+    width: 33.33333%;
+    max-width: 480px;
+  }
+}
+
+aside {
+  width: 100%;
+}
+
+.aside-list li {
+  border-bottom: 1px solid <%= colors.Border["1"].fallback.color %>;
+}
+
+.aside-list li span {
+  float: left;
+  margin-left: 4px;
+}
+
+.burger {
+  display: none;
+}
+
+@media (min-width: 0px) {
+  .aside-list li {
+    border-bottom: 1px solid <%= colors.Border["1"].main.color %>;
+  }
+}
+
+@media (max-width: <%= responsive.MEDIA.tablet - 1 %>px) {
+  .aside {
+    background-color: transparent;
+  }
+  
+  .aside-image {
+    display: none;
+  }
+
+  .js .burger {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    margin-top: -32px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .dropdown-container {
+    background-color: <%= colors.Surface["1"].color %>;
+  }
+
+  .js .dropdown-container {
+    display: none;
+  }
+
+  .js .dropdown-container--opened {
+    display: block;
+  }
+}
+
+@media (max-width: <%= responsive.MEDIA.phone - 1 %>px) {
+  .js .burger {
+    right: 7.4vw;
+    margin-top: -21px;
+    width: 42px;
+    height: 42px;
+  }
+}

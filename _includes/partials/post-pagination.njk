@@ -1,0 +1,25 @@
+{% if pagination.href.previous or pagination.href.next %}
+  <div class="post-pagintaion">
+      {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="post-pagintaion__block">
+        {% container "80_80_80_80_80", "", "centered" %}
+        <span>PREVIOUS</span>
+        <h3>{{ pagination.page.previous.title.rendered | safe }}</h3>
+        {% end_container %}
+      </a>
+      {% endif %}
+      {% if pagination.href.previous and pagination.href.next %}
+      <div class="post-pagintaion__border">
+      </div>
+      {% endif %}
+      {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="post-pagintaion__block">
+        {% container "80_80_80_80_80", "", "centered" %}
+        <span>NEXT</span>
+        <h3>{{ pagination.page.next.title.rendered | safe }}</h3>
+        {% end_container %}
+      </a>
+      {% endif %}
+  </div>
+{% endif %}
+

@@ -1,0 +1,25 @@
+.footer {
+  padding: 3.75% 0;
+}
+
+.footer__inner {
+  padding: 3.75% 0;
+  background-color: <%= colors.Surface["1"].color %>;
+}
+
+.footer__copyright {
+  color: <%= colors.Grey["600"].fallback.color %>;
+}
+
+@media (min-width: 0px) {
+  .footer__copyright {
+    color: <%= colors.Grey["600"].main.color %>;
+  }
+}
+
+@media(max-width: <%= responsive.MEDIA.phone -1 %>px) {
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
