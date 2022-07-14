@@ -48,7 +48,7 @@
                             {% responsive "ul", "tags list-reset" %}
                               {% responsive "li", "tag" %}
                                 {% pictureSvgPng "img/icons/calendar.svg", "Posted on: ", "20", "16" %}
-                                <a class="secondary__link" href="#">
+                                <a class="secondary__link" href="/{{ post.slug | slug}}/">
                                   <time>{{ post.modified }}</time>
                                 </a>
                               {% endresponsive %}
@@ -60,9 +60,15 @@
                               {% endresponsive %}
                               {% responsive "li", "tag" %}
                                 {% pictureSvgPng "img/icons/folder.svg", "Categories on: ", "20", "16" %}
-                                <a class="secondary__link" href="#">
-                                  Home Improvement
-                                </a>
+                                  {% responsive "ul", "list-reset responsive" %}
+                                    {% for category in post.categories %}
+                                      <li{%if loop.last%} class="last" {% endif %}>
+                                      <a class="secondary__link" href="/{% getCategorySlug categories, category %}/">
+                                        {% getCategoryName categories, category %}{%if loop.last%}{% else %},{% endif %}
+                                      </a>
+                                      </li>
+                                    {% endfor %}
+                                  {% endresponsive %}
                               {% endresponsive %}
                             {% endresponsive %}
                           {% end_container %}
@@ -71,11 +77,13 @@
                     </footer>
                     {% responsive %}
                       {% container "80_80_80_80_80", "", "centered" %}
+                        {% if post.jetpack_featured_media_url %}
                         <div class="spacer-32"></div>
                         <a href="/{{ post.slug | slug}}/">
                         <img src="{{ post.jetpack_featured_media_url }}" alt="{{ post.title.rendered }}">
                         </a>
                         <div class="spacer-40"></div>
+                        {% endif %}
                       {% end_container %}
                     {% endresponsive %}
                   </article>

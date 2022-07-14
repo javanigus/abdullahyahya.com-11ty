@@ -1,0 +1,602 @@
+[
+  {
+    "id": 3,
+    "count": 71,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/business/",
+    "name": "Business / Investing",
+    "slug": "business",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=3"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "count": 6,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/cleaning/",
+    "name": "Cleaning",
+    "slug": "cleaning",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/25"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=25"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "count": 9,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/documentary/",
+    "name": "Documentary",
+    "slug": "documentary",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/4"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=4"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "count": 59,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/food/",
+    "name": "Food",
+    "slug": "food",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/6"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=6"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "count": 16,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/health/",
+    "name": "Health",
+    "slug": "health",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/20"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=20"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "count": 84,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/home-improvement/",
+    "name": "Home Improvement",
+    "slug": "home-improvement",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/18"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=18"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "count": 45,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/how-to/",
+    "name": "How-To",
+    "slug": "how-to",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/23"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=23"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "count": 2,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/productivity/",
+    "name": "Productivity",
+    "slug": "productivity",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/30"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=30"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "count": 14,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/real-estate/",
+    "name": "Real Estate",
+    "slug": "real-estate",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/22"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=22"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "count": 23,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/recipes/",
+    "name": "Recipes",
+    "slug": "recipes",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/26"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=26"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "count": 63,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/self-development/",
+    "name": "Self Development",
+    "slug": "self-development",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/19"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=19"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "count": 34,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/technology/",
+    "name": "Technology",
+    "slug": "technology",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/21"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=21"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "count": 11,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/travels/",
+    "name": "Travel",
+    "slug": "travels",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/11"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=11"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "count": 2,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/uncategorized/",
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "count": 340,
+    "description": "",
+    "link": "http://www.abdullahyahya.com/category/web-development/",
+    "name": "Web Development",
+    "slug": "web-development",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories/12"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "http://www.abdullahyahya.com/wp-json/wp/v2/posts?categories=12"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

@@ -1,4 +1,4 @@
-.tag  {
+.tag {
   flex-wrap: nowrap;
   margin: 0 16px 16px 0;
   float: left;
@@ -15,6 +15,19 @@
 
 .tag a {
   display: table-cell;
+}
+
+.tag ul,
+.tag li {
+  float: left;
+}
+
+.tag li {
+  margin-right: 5px;
+}
+
+.tag li.last {
+  margin-right: 0;
 }
 
 @supports (display: flex) {
