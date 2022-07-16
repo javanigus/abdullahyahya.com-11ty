@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
 <head>
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
+  <title>{{ post.title.rendered | safe }}</title>
+  <meta name="description" content="{{ post.description | safe }}">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Menu -->
   <link rel="stylesheet" href="/css/index.css">
 
   {% include 'partials/js-detect.njk' %}
@@ -46,16 +44,24 @@
                       {% endresponsive %}
                       {% responsive "li", "tag" %}
                         {% pictureSvgPng "img/icons/user.svg", "Author on: ", "20", "16" %}
-                        <a class="secondary__link" href="#">
-                          Abdullah Yahya
+                        <a class="secondary__link" href="/author/{{ post.authors[0].slug }}/">
+                          {{ post.authors[0].name }}
                         </a>
                       {% endresponsive %}
-                      {% responsive "li", "tag" %}
-                        {% pictureSvgPng "img/icons/folder.svg", "Categories on: ", "20", "16" %}
-                        <a class="secondary__link" href="#">
-                          Home Improvement
-                        </a>
+                    {% if post.categories.length > 0 %}
+                    {% responsive "li", "tag" %}
+                      {% pictureSvgPng "img/icons/folder.svg", "Categories on: ", "20", "16" %}
+                      {% responsive "ul", "list-reset responsive" %}
+                        {% for category in post.categories %}
+                          <li{%if loop.last%} class="last" {% endif %}>
+                          <a class="secondary__link" href="/category/{{ category.slug }}/">
+                            {{ category.name }}{%if loop.last%}{% else %},{% endif %}
+                          </a>
+                          </li>
+                        {% endfor %}
                       {% endresponsive %}
+                    {% endresponsive %}
+                    {% endif %}
                     {% endresponsive %}
                   {% end_container %}
                 {% endresponsive %}

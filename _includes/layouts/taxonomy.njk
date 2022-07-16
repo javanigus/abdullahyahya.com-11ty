@@ -20,7 +20,11 @@
       {% responsive %}
         {% container "100_100_83_83_83", "", "centered" %}
           <main>
-            <h2 class="visually-hidden">Last posts</h2>
+            <div class="category-head">
+              <div class="category-head__inner">
+                <h1>{{ title }} </h1>
+              </div>
+            </div>
             <ul class="list-reset posts">
             {% for post in pagination.items %}
               <li class="post">

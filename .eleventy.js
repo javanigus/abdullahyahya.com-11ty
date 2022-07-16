@@ -641,20 +641,6 @@ function formatDate(date) {
   return `${d.toLocaleString('default', { month: 'long' })}, ${d.getDay()}, ${d.getFullYear()}`;
 }
 
-function getCategoryName(array, item) {
-  // console.log('array', array);
-  // console.log('item', item);
-  // console.log(array.find(x => x.id === item));
-  // console.log(array.find(x => x.id === item).name);
-  // console.log(array.find(x => x.id === item).slug);
-  
-  return array.find(x => x.id === item)?.name
-}
-
-function getCategorySlug(array, item) {
-  return array.find(x => x.id === item)?.slug
-}
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
 
@@ -669,6 +655,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addAsyncShortcode("pictureSvgPng", pictureSvgPng);
   eleventyConfig.addAsyncShortcode("picturePngWebp", picturePngWebp);
 
+  // filter
+  eleventyConfig.addFilter("parseNum", function(value) {
+    return value.replace(/\D/g,'');
+  });
+
   // design-system
   eleventyConfig.addShortcode("assets_block", assets_block);
   eleventyConfig.addShortcode("color_block", color_block);
@@ -677,6 +668,4 @@ module.exports = function (eleventyConfig) {
   // content
   eleventyConfig.addShortcode("figure", figure);
   eleventyConfig.addShortcode("formatDate", formatDate);
-  eleventyConfig.addShortcode("getCategoryName", getCategoryName);
-  eleventyConfig.addShortcode("getCategorySlug", getCategorySlug);
 }

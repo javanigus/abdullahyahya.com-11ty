@@ -1,0 +1,20 @@
+.category-head {
+  padding: 3.75% 0;
+}
+
+.category-head__inner {
+  background-color: <%= colors.Surface["1"].color %>;
+  border-left: 7px solid <%= colors["On Surface"]["2"].color %>;
+  padding: 4% 8%;
+  box-shadow: 0 0 1px rgb(0 0 0 / 15%);
+}
+
+@media(max-width: <%= responsive.MEDIA.tablet - 1 %>px) {
+  .category-head__inner {
+    padding: 3.75% 7.5%;
+  }
+}
+
+.category-head h1 {
+  margin-bottom: 0;
+}

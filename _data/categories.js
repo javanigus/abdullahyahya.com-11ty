@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
@@ -9,13 +9,33 @@ module.exports = async function() {
     type: "json"
   });
 
-//   console.log(data.length);
+  const categories = [];
 
-//   fs.writeFile ("data.json", JSON.stringify(data, null, 2), function(err) {
-//     if (err) throw err;
-//     console.log('complete');
-//     }
-// );
+  data.forEach(category => {
+    const obj = {
+      slug: category.slug,
+      name: category.name
+    };
+    categories.push(obj)
+  });
+
+  const dir = './categories';
+
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+
+  categories.forEach(category => {
+    fs.writeFileSync(`categories/${category.slug}.md`, `---
+layout: layouts/taxonomy.njk
+title: Category ${category.name}
+description: Posts from category ${category.name}
+pagination:
+  data: readyPosts.category.${category.slug}
+  size: 10
+permalink: "category/${category.slug}{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
+---`);
+  })
 
   return data;
 };

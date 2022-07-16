@@ -1,4 +1,3 @@
-const fs = require('fs');
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
@@ -23,6 +22,7 @@ module.exports = async function() {
 
     page++
   }
+
 
   responses = responses.flat(2);
   return responses;

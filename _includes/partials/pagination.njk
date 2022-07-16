@@ -60,9 +60,9 @@
               </li>
             {% endif %}
 
-            {% set lastPageNumber = pagination.href.last | replace("/", "") %}
+              {% set lastPageNumber = pagination.href.last | parseNum %}
 
-            {% if lastPageNumber - pagination.pageNumber - 1 > 2 %}
+              {% if lastPageNumber - pagination.pageNumber - 1 > 2 %}
               <li class="pagination__item">
                 <a class="pagination__link">
                   ...

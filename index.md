@@ -1,9 +1,9 @@
 ---
 layout: layouts/index.njk
 title: Index
-description: Starter pack for site.
+description: Abdullah Yahya blog
 pagination:
-  data: posts
+  data: readyPosts.all
   size: 10
 permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
 ---
