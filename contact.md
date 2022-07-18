@@ -1,5 +1,5 @@
 ---
 layout: layouts/contact.njk
 title: Contact
-description: Starter pack for site.
+description: Get into contact with me
 ---

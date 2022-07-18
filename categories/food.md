@@ -1,9 +1,10 @@
 ---
 layout: layouts/taxonomy.njk
-title: Category Food
+title: Food
 description: Posts from category Food
 pagination:
   data: readyPosts.category.food
   size: 10
 permalink: "category/food{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
+taxonomy: Category
 ---

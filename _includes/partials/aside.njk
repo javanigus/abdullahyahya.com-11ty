@@ -55,8 +55,9 @@
                   <h3>Categories</h3>
                   <ul class="aside-list list-reset">
                   {% for category in categories %}
+                    {% set categoryUrl = "/category/" + category.slug + "/" %}
                     {% responsive "li" %}
-                      <a class="aside-link{% if href === page.url %} aside-link--current {% endif %}" href="/category/{{ category.slug | slug }}/">{{ category.name }}</a> <span class="aside-link">({{ category.count }})</span>
+                      <a class="aside-link{% if categoryUrl === page.url %} aside-link--current {% endif %}" href="/category/{{ category.slug | slug }}/">{{ category.name }}</a> <span class="aside-link">({{ category.count }})</span>
                     {% endresponsive %}
                   {% endfor %}
                   </ul>

@@ -28,12 +28,13 @@ module.exports = async function() {
   categories.forEach(category => {
     fs.writeFileSync(`categories/${category.slug}.md`, `---
 layout: layouts/taxonomy.njk
-title: Category ${category.name}
+title: ${category.name}
 description: Posts from category ${category.name}
 pagination:
   data: readyPosts.category.${category.slug}
   size: 10
 permalink: "category/${category.slug}{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
+taxonomy: Category
 ---`);
   })
 

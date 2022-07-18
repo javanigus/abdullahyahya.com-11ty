@@ -1,6 +1,6 @@
 ---
 layout: layouts/index.njk
-title: Index
+title: site.name
 description: Abdullah Yahya blog
 pagination:
   data: readyPosts.all

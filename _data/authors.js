@@ -28,12 +28,13 @@ module.exports = async function() {
   authors.forEach(author => {
     fs.writeFileSync(`authors/${author.slug}.md`, `---
 layout: layouts/taxonomy.njk
-title: Author ${author.name}
+title: ${author.name}
 description: Posts from author ${author.name}
 pagination:
   data: readyPosts.author.${author.slug}
   size: 10
 permalink: "author/${author.slug}{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
+taxonomy: Author
 ---`);
   })
 

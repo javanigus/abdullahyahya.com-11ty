@@ -1,7 +1,7 @@
 ---
 layout: layouts/default.njk
 title: About
-description: Starter pack for site.
+description: About me
 ---
 
 {% container "80_80_80_80_80", "", "centered" %}

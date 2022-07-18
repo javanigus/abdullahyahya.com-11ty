@@ -1,7 +1,7 @@
 ---
 layout: layouts/default.njk
 title: Books
-description: Starter pack for site.
+description: Books that I have written
 ---
 
 {% container "80_80_80_80_80", "", "centered" %}
