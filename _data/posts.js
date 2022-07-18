@@ -23,7 +23,7 @@ module.exports = async function() {
     page++
   }
 
-
   responses = responses.flat(2);
+
   return responses;
 };

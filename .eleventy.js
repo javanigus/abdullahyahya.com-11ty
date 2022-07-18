@@ -642,6 +642,8 @@ function formatDate(date) {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.ignores.add("README.md");
+
   eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addShortcode("max_width", max_width);

@@ -55,7 +55,6 @@ module.exports = async function() {
   })
 
   posts.all = wpPosts;
-  console.log(posts);
 
   return posts;
 };

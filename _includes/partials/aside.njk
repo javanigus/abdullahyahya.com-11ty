@@ -56,7 +56,7 @@
                   <ul class="aside-list list-reset">
                   {% for category in categories %}
                     {% responsive "li" %}
-                      <a class="aside-link" href="/category/{{ category.slug | slug }}/">{{ category.name }}</a> <span class="aside-link">({{ category.count }})</span>
+                      <a class="aside-link{% if href === page.url %} aside-link--current {% endif %}" href="/category/{{ category.slug | slug }}/">{{ category.name }}</a> <span class="aside-link">({{ category.count }})</span>
                     {% endresponsive %}
                   {% endfor %}
                   </ul>
@@ -67,7 +67,7 @@
                   {% for link, href in popular_posts %}
                     <ul class="aside-list list-reset">
                       <li>
-                        <a class="aside-link" href="{{ href }}">{{ link }}</a>
+                        <a class="aside-link{% if href === page.url %} aside-link--current {% endif %}" href="{{ href }}">{{ link }}</a>
                       </li>
                   </ul>
                   {% endfor %}
