@@ -12,6 +12,6 @@ permalink: js/google-search.js
     } 
     event.returnValue = false;
     var searchQuery = input.value;
-    window.location.href = 'https://www.google.com/search?q=' + searchQuery + 'site:' + <%= site.host %>;
+    window.location.href = 'https://www.google.com/search?as_q=' + searchQuery + '&as_sitesearch=' + "<%= site.host %>";
   }
 })();
