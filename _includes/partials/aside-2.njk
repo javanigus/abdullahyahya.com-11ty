@@ -20,41 +20,11 @@
             {% end_container %}
             <div class="dropdown-container">
               {% container "80_80_80_60_60", "", "centered" %}
+
                 <div class="spacer-02"></div>
                 <div class="menu">
-                  {% traverse menu.links %}
-                </div>
-                <div class="spacer-02"></div>
-                <div class="search">
-                  <form>
-                    <label class="p" for="site-search">
-                      Search
-                    </label>
-                    {% responsive "", "search__container" %}
-                      <input class="field" type="search" id="site-search" name="site-search">
-                      <button class="secondary-button" type="submit">
-                        SEARCH
-                      </button>
-                    {% endresponsive %}
-                  </form>
-                  <p class="search__google">
-                    or 
-                    <a href="/google-search/" class="underline-link">
-                      search this site on Google
-                    </a>
-                  </p>
-                </div>
-                <div class="spacer-02"></div>
-                <div class="categories">
-                  <h3>Categories</h3>
-                  <ul class="aside-list list-reset">
-                  {% for category in categories %}
-                    {% set categoryUrl = "/category/" + category.slug + "/" %}
-                    {% responsive "li" %}
-                      <a class="aside-link{% if categoryUrl === page.url %} aside-link--current {% endif %}" href="/category/{{ category.slug | slug }}/">{{ category.name }}</a> <span class="aside-link">({{ category.count }})</span>
-                    {% endresponsive %}
-                  {% endfor %}
-                  </ul>
+                  <h3>LANDLORD TIPS</h3>
+                  {% traverse menu["links-2"] %}
                 </div>
                 <div class="spacer-02"></div>
                 <div class="popular-posts">

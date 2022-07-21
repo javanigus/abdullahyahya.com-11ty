@@ -7,8 +7,8 @@
 @media (min-width: <%= responsive.MEDIA.tablet %>px) {
   .aside--fixed {
     position: fixed;
-    width: 33.33333%;
-    max-width: 480px;
+    width: 29%;
+    max-width: 418px;
   }
 }
 
@@ -20,6 +20,14 @@ aside {
   border-bottom: 1px solid <%= colors.Border["1"].fallback.color %>;
 }
 
+.aside-list .aside-list li:nth-last-child(1) {
+  border-bottom: 1px solid <%= colors.Border["1"].fallback.color %>;
+}
+
+.aside-list .aside-list li:nth-child(1) {
+  border-top: 1px solid <%= colors.Border["1"].fallback.color %>;
+}
+
 .aside-list li span {
   float: left;
   margin-left: 4px;
@@ -29,9 +37,21 @@ aside {
   display: none;
 }
 
+.aside-list .aside-list {
+  margin-left: 16px;
+}
+
 @media (min-width: 0px) {
   .aside-list li {
     border-bottom: 1px solid <%= colors.Border["1"].main.color %>;
+  }
+
+  .aside-list .aside-list li:nth-last-child(1) {
+    border-bottom: 0;
+  }
+  
+  .aside-list .aside-list li:nth-child(1) {
+    border-top: 1px solid <%= colors.Border["1"].main.color %>;
   }
 }
 

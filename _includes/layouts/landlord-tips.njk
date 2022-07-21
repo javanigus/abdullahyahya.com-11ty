@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
 <head>
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
+  <title>{{ single_page.title.rendered }}</title>
+  <meta name="description" content="{{ single_page.description }}">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script async src="https://cse.google.com/cse.js?cx=3ab88e4dc8378ee4d"></script>
-  <!-- Menu -->
   <link rel="stylesheet" href="/css/index.css">
 
   {% include 'partials/js-detect.njk' %}
@@ -16,7 +14,7 @@
   {% max_width %}
   {% responsive %}
     {% container "100_100_29_29_29" %}
-      {% include 'partials/aside.njk' %}
+      {% include 'partials/aside-2.njk' %}
     {% end_container %}
     {% container "85_85_71_71_71", "", "main" %}
       {% responsive %}
@@ -25,20 +23,19 @@
           <div class="post">
             <div class="post__block">
               <div class="spacer-40"></div>
+              {% responsive %}
+                {% container "80_80_80_80_80", "", "centered" %}
+                  <h3 class="h1">
+                    {{ single_page.title.rendered }}
+                  </h3>
+                {% end_container %}
+              {% endresponsive %}
               <div class="post__content">
                 {% responsive %}
                   {% container "80_80_80_80_80", "", "centered" %}
-                    <h1>{{ title }}</h1>
-                    <form class="google-search" id="google-search">
-                      {% responsive %}
-                          <label class="visually-hidden" for="google-search-field">
-                            search
-                          </label>
-                          <input class="field" type="search" id="google-search-field" name="google-search-field" require="">
-                          <button class="primary-button" type="submit">Search</button>
-                          <div class="spacer-24"></div>
-                      {% endresponsive %}
-                    </form>
+                    {{ single_page.content.rendered | safe }}
+                  {% end_container %}
+                  {% container "80_80_80_80_80", "", "centered" %}
                     {% include 'partials/share-block.njk' %}
                   {% end_container %}
                 {% endresponsive %}
@@ -53,6 +50,5 @@
   {% endresponsive %}
   {% end_max_width %}
   <script src="/js/index.js"></script>
-  <script src="/js/google-search.js"></script>
 </body>
 </html>

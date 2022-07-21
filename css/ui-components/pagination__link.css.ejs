@@ -6,6 +6,12 @@
   padding: 0 16px;
 }
 
+@media (max-width: <%= responsive.MEDIA.phone - 1 %>px) {
+  .pagination__link {
+    padding: 0 8px;
+  }
+}
+
 .pagination__link--current {
   font-weight: 700;
 }

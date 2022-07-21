@@ -641,9 +641,39 @@ function formatDate(date) {
   return `${d.toLocaleString('default', { month: 'long' })}, ${d.getDay()}, ${d.getFullYear()}`;
 }
 
+function traverse(arr) {
+  let template = '<ul class="aside-list list-reset">';
+
+  arr.forEach(obj => {
+    let linkClass = 'aside-link';
+    if(this.page?.url === obj.link) {
+      linkClass += ' aside-link--current';
+    }
+
+    template += `
+    <li>
+      <a class="${linkClass}" href="${ obj.link }">
+        ${obj.title }
+      </a>
+    `;
+
+    if(obj.submenu) {
+      template += traverse(obj.submenu);
+    }
+
+    template += '</li>';
+  })
+
+  template += '</ul>';
+
+  return template;
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
 
+  eleventyConfig.addPassthroughCopy("js/**/*.js");
+  eleventyConfig.addPassthroughCopy("css/**/*.css");
   eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addShortcode("max_width", max_width);
@@ -668,6 +698,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode("ui_kit_block", ui_kit_block);
 
   // content
+  eleventyConfig.addShortcode("traverse", traverse);
   eleventyConfig.addShortcode("figure", figure);
   eleventyConfig.addShortcode("formatDate", formatDate);
 }

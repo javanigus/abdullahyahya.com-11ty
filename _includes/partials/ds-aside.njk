@@ -22,13 +22,7 @@
               {% container "80_80_80_60_60", "", "centered" %}
                 <div class="spacer-02"></div>
                 <div class="menu">
-                  <ul class="aside-list list-reset">
-                    {% for link, href in menu["ds-links"] %}
-                      <li>
-                        <a class="aside-link{% if href === page.url %} aside-link--current {% endif %}" href="{{ href }}">{{ link }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
+                  {% traverse menu["ds-links"] %}
                 </div>
                 <div class="spacer-02"></div>
               {% end_container %}
