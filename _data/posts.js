@@ -11,7 +11,6 @@ module.exports = async function() {
     const urlWithPage = `${url}&page=${page}`
     try {
       data = await EleventyFetch(urlWithPage, {
-        duration: "1d",
         type: "json"
       })
     } catch(e) {

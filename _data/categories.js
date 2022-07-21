@@ -5,7 +5,6 @@ module.exports = async function() {
   const url = "http://abdullahyahya.com/wp-json/wp/v2/categories?per_page=100";
 
   const data = await EleventyFetch(url, {
-    duration: "1d",
     type: "json"
   });
 

@@ -11,7 +11,6 @@ module.exports = async function() {
     const urlWithPage = `${url}&page=${page}`
     try {
       data = await EleventyFetch(urlWithPage, {
-        duration: "1d",
         type: "json"
       })
     } catch(e) {
@@ -33,19 +32,22 @@ module.exports = async function() {
   })
 
   const landlordTipsPages = responses.filter(page => page.link.includes('lord-of-the-land'));
-  
+
   function updatePages(arr) {
+
     arr.forEach(page => {
-      page.slug = page.link.replace('http://www.abdullahyahya.com', '');
-  
-      if(page.slug === '/books-2/') {
-        page.slug = '/books/';
+      if(page) {
+        page.slug = page.link.replace('http://www.abdullahyahya.com', '');
+
+        if(page.slug === '/books-2/') {
+          page.slug = '/books/';
+        }
+    
+        let description = page.excerpt.rendered;
+        description = description.slice(description.indexOf('<p>') + 3, description.indexOf('<a href='));
+        description = description.slice(0, description.lastIndexOf('.') + 1);
+        page.description = description;
       }
-  
-      let description = page.excerpt.rendered;
-      description = description.slice(description.indexOf('<p>') + 3, description.indexOf('<a href='));
-      description = description.slice(0, description.lastIndexOf('.') + 1);
-      page.description = description;
     })
   }
 
