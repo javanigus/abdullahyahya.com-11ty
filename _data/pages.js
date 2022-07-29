@@ -44,7 +44,7 @@ module.exports = async function() {
         }
 
         if(page.content.rendered.includes('http://maps.google.com/')) {
-          page.content.rendered.replace('http:', 'https:')
+          page.content.rendered = page.content.rendered.replace('http://maps.google.com/', 'https://maps.google.com/')
         }
     
         let description = page.excerpt.rendered;
