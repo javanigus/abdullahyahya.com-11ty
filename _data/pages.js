@@ -42,6 +42,10 @@ module.exports = async function() {
         if(page.slug === '/books-2/') {
           page.slug = '/books/';
         }
+
+        if(page.content.rendered.includes('http://maps.google.com/')) {
+          page.content.rendered.replace('http:', 'https:')
+        }
     
         let description = page.excerpt.rendered;
         description = description.slice(description.indexOf('<p>') + 3, description.indexOf('<a href='));
