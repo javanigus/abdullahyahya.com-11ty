@@ -29,7 +29,7 @@
                 {% responsive %}
                   {% container "80_80_80_80_80", "", "centered" %}
                     <h1>{{ title }}</h1>
-                    <form class="google-search" id="google-search">
+                    {# <form class="google-search" id="google-search">
                       {% responsive %}
                           <label class="visually-hidden" for="google-search-field">
                             search
@@ -38,7 +38,12 @@
                           <button class="primary-button" type="submit">Search</button>
                           <div class="spacer-24"></div>
                       {% endresponsive %}
-                    </form>
+                    </form> #}
+
+
+                    <script async src="https://cse.google.com/cse.js?cx=739c1c078f0c14987">
+                    </script>
+                    <div class="gcse-search"></div>
                     {% include 'partials/share-block.njk' %}
                   {% end_container %}
                 {% endresponsive %}
