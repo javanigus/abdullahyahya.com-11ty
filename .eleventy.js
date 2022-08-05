@@ -672,7 +672,8 @@ function traverse(arr) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
-  
+  eleventyConfig.addPassthroughCopy("sitemap.txt");
+
   eleventyConfig.addPassthroughCopy("js/**/*.js");
   eleventyConfig.addPassthroughCopy("css/**/*.css");
   eleventyConfig.addPassthroughCopy("img");
