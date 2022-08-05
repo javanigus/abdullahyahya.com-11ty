@@ -8,3 +8,8 @@
 .google-search button {
   margin-bottom: 32px;
 }
+
+.gsc-control-cse {
+  padding: 0 !important;
+  margin-bottom: 32px !important;
+}
