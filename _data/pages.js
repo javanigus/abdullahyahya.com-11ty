@@ -43,9 +43,9 @@ module.exports = async function() {
           page.slug = '/books/';
         }
 
-        // if(page.content.rendered.includes('http://maps.google.com/')) {
-        //   page.content.rendered = page.content.rendered.replace('http://maps.google.com/', 'https://maps.google.com/')
-        // }
+        if(page.content.rendered.includes('http://maps.google.com/')) {
+          page.content.rendered = page.content.rendered.replace('http://maps.google.com/', 'https://maps.google.com/')
+        }
     
         let description = page.excerpt.rendered;
         description = description.slice(description.indexOf('<p>') + 3, description.indexOf('<a href='));
