@@ -51,7 +51,7 @@
                               {% responsive "li", "tag" %}
                                 {% pictureSvgPng "img/icons/calendar.svg", "Posted on: ", "20", "16" %}
                                 <a class="secondary__link" href="/{{ post.slug | slug}}/">
-                                  <time>{{ post.modified }}</time>
+                                <time datetime="{{ post.modified }}">{% formatDate post.modified %} </time>
                                 </a>
                               {% endresponsive %}
                               {% if post.categories.length > 0 %}
@@ -70,6 +70,20 @@
                                     <li{%if loop.last%} class="last" {% endif %}>
                                     <a class="secondary__link" href="/category/{{ category.slug }}/">
                                       {{ category.name }}{%if loop.last%}{% else %},{% endif %}
+                                    </a>
+                                    </li>
+                                  {% endfor %}
+                                {% endresponsive %}
+                              {% endresponsive %}
+                              {% endif %}
+                              {% if post.tags.length > 0 %}
+                              {% responsive "li", "tag" %}
+                                {% pictureSvgPng "img/icons/label.svg", "Tags on: ", "20", "16" %}
+                                {% responsive "ul", "list-reset responsive" %}
+                                  {% for tag in post.tags %}
+                                    <li{%if loop.last%} class="last" {% endif %}>
+                                    <a class="secondary__link" href="/tag/{{ tag.slug }}/">
+                                      {{ tag.name }}{%if loop.last%}{% else %},{% endif %}
                                     </a>
                                     </li>
                                   {% endfor %}

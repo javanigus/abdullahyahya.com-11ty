@@ -637,8 +637,18 @@ function figure(imgSrc, caption, link) {
 }
 
 function formatDate(date) {
+
+
   const d = new Date(date);
-  return `${d.toLocaleString('default', { month: 'long' })}, ${d.getDay()}, ${d.getFullYear()}`;
+
+  if(date == '2022-02-13T18:30:16') {
+    console.log('----------');  
+    console.log('FOUND', d);
+    console.log(d.getDate());
+    console.log('----------');  
+  }
+
+  return `${d.toLocaleString('default', { month: 'long' })}, ${d.getDate()}, ${d.getFullYear()}`;
 }
 
 function traverse(arr) {
