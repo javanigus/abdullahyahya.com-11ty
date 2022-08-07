@@ -637,17 +637,7 @@ function figure(imgSrc, caption, link) {
 }
 
 function formatDate(date) {
-
-
   const d = new Date(date);
-
-  if(date == '2022-02-13T18:30:16') {
-    console.log('----------');  
-    console.log('FOUND', d);
-    console.log(d.getDate());
-    console.log('----------');  
-  }
-
   return `${d.toLocaleString('default', { month: 'long' })}, ${d.getDate()}, ${d.getFullYear()}`;
 }
 

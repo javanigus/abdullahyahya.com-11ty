@@ -35,7 +35,7 @@
                       {% responsive %}
                         {% container "80_80_80_80_80", "", "centered" %}
                           <h3 class="h1">
-                            <a href="/{{ post.slug | slug}}/">
+                            <a href="/{{ post.slug }}/">
                             {{ post.title.rendered | safe }}
                             </a>
                           </h3>
@@ -50,7 +50,7 @@
                             {% responsive "ul", "tags list-reset" %}
                               {% responsive "li", "tag" %}
                                 {% pictureSvgPng "img/icons/calendar.svg", "Posted on: ", "20", "16" %}
-                                <a class="secondary__link" href="/{{ post.slug | slug}}/">
+                                <a class="secondary__link" href="/{{ post.slug }}/">
                                 <time datetime="{{ post.modified }}">{% formatDate post.modified %} </time>
                                 </a>
                               {% endresponsive %}
@@ -99,7 +99,7 @@
                       {% container "80_80_80_80_80", "", "centered" %}
                         {% if post.jetpack_featured_media_url %}
                         <div class="spacer-32"></div>
-                        <a href="/{{ post.slug | slug}}/">
+                        <a href="/{{ post.slug }}/">
                         <img src="{{ post.jetpack_featured_media_url }}" alt="{{ post.title.rendered }}">
                         </a>
                         <div class="spacer-40"></div>

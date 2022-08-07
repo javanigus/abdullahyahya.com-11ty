@@ -2,7 +2,7 @@
   <p>SHARE THIS:</p>
   {% responsive "ul", "list-reset" %}
     <li>
-      <a href="http://twitter.com/share?text={{ post.title.rendered | safe }}&url={{ site.host }}/{{ post.slug | slug}}/" class="share button-container" target="_blank" rel="noopener">
+      <a href="http://twitter.com/share?text={{ post.title.rendered | safe }}&url={{ site.host }}/{{ post.slug }}/" class="share button-container" target="_blank" rel="noopener">
         <div class="share__img">
           {% pictureSvgPng "img/icons/twitter.svg", "", "18", "18" %}
         </div>
@@ -12,7 +12,7 @@
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.host }}/{{ post.slug | slug}}/&t={{ post.title.rendered | safe }}" class="share button-container">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.host }}/{{ post.slug }}/&t={{ post.title.rendered | safe }}" class="share button-container">
         <div class="share__img" role="presentation" aria-hidden="true">
           {% pictureSvgPng "img/icons/facebook.svg", "", "18", "18" %}
         </div>
