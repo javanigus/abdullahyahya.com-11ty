@@ -2,17 +2,12 @@
   min-height: 102px;
   padding: 8px;
   border: 1px solid <%= colors.Border["1"]["fallback"].color %>;
+  border: 1px solid <%= colors.Border["1"]["main"].color %>;
   background-color: <%= colors.Surface["3"].color %>;
 }
 
 .assets-block__inner--dark {
   background-color: <%= colors.Surface["4"].color %>;
-}
-
-@media (min-width: 0px) {
-  .assets-block__inner {
-    border: 1px solid <%= colors.Border["1"]["main"].color %>;
-  }
 }
 
 .assets-block__buffer,

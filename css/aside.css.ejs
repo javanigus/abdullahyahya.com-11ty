@@ -18,14 +18,16 @@ aside {
 
 .aside-list li {
   border-bottom: 1px solid <%= colors.Border["1"].fallback.color %>;
+  border-bottom: 1px solid <%= colors.Border["1"].main.color %>;
 }
 
 .aside-list .aside-list li:nth-last-child(1) {
-  border-bottom: 1px solid <%= colors.Border["1"].fallback.color %>;
+  border-bottom: 0;
 }
 
 .aside-list .aside-list li:nth-child(1) {
   border-top: 1px solid <%= colors.Border["1"].fallback.color %>;
+  border-top: 1px solid <%= colors.Border["1"].main.color %>;
 }
 
 .aside-list li span {
@@ -39,20 +41,6 @@ aside {
 
 .aside-list .aside-list {
   margin-left: 16px;
-}
-
-@media (min-width: 0px) {
-  .aside-list li {
-    border-bottom: 1px solid <%= colors.Border["1"].main.color %>;
-  }
-
-  .aside-list .aside-list li:nth-last-child(1) {
-    border-bottom: 0;
-  }
-  
-  .aside-list .aside-list li:nth-child(1) {
-    border-top: 1px solid <%= colors.Border["1"].main.color %>;
-  }
 }
 
 @media (max-width: <%= responsive.MEDIA.tablet - 1 %>px) {

@@ -56,6 +56,7 @@
 .active .pagination__link--prev,
 .active .pagination__link--next {
   background-color: <%= colors["Grey"]["600"].fallback.color %>;
+  background-color: <%= colors["Grey"]["600"].main.color %>;
 }
 
 .pagination__link--prev:focus,
@@ -64,6 +65,8 @@
 .focus .pagination__link--next {
   box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].fallback.color %> inset,
   0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
+  box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].main.color %> inset,
+  0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
   background-color: <%= colors["Grey"]["600"].fallback.color %>;
   outline: none;
 }
@@ -71,6 +74,7 @@
 .pagination__link--prev:focus:not(:focus-visible),
 .pagination__link--next:focus:not(:focus-visible) {
   background-color: <%= colors["Grey"]["600"].fallback.color %>;
+  background-color: <%= colors["Grey"]["600"].main.color %>;
   box-shadow: none;
   outline: none;
 }
@@ -79,38 +83,8 @@
 .pagination__link--next:focus-visible {
   box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].fallback.color %> inset,
   0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
+  box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].main.color %> inset,
+  0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
   background-color: <%= colors["Grey"]["600"].fallback.color %>;
   outline: none;
-}
-
-@media(min-width: 0px) {
-  .pagination__link--prev:hover,
-  .pagination__link--next:hover,
-  .hover .pagination__link--prev,
-  .hover .pagination__link--next,
-  .pagination__link--prev:active,
-  .pagination__link--next:active,
-  .active .pagination__link--prev,
-  .active .pagination__link--next {
-    background-color: <%= colors["Grey"]["600"].main.color %>;
-  }
-
-  .pagination__link--prev:focus,
-  .pagination__link--next:focus,
-  .focus .pagination__link--prev,
-  .focus .pagination__link--next {
-    box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].main.color %> inset,
-    0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
-  }
-
-  .pagination__link--prev:focus:not(:focus-visible),
-  .pagination__link--next:focus:not(:focus-visible) {
-    background-color: <%= colors["Grey"]["600"].main.color %>;
-  }
-
-  .pagination__link--prev:focus-visible,
-  .pagination__link--next:focus-visible {
-    box-shadow: 0 0 0 1px <%= colors["Grey"]["600"].main.color %> inset,
-    0 0 0 2px <%= colors["Surface"]["1"].color %> inset;
-  }
 }

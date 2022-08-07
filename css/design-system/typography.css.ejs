@@ -1,5 +1,6 @@
 .typography-block {
   border: 1px solid <%= colors.Border["1"].fallback.color %>;
+  border: 1px solid <%= colors.Border["1"].main.color %>;
   padding: 8px;
   background-color: <%= colors.Surface["3"].color %>;
 }
@@ -63,10 +64,4 @@
 
 .typography-block__parameters-item .typography-block__element * {
   word-wrap: break-word;
-}
-
-@media (min-width: 0px) {
-  .typography-block {
-    border: 1px solid <%= colors.Border["1"].main.color %>;
-  }
 }

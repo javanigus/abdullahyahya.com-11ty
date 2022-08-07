@@ -2,6 +2,7 @@
   min-height: 102px;
   padding: 8px;
   border: 1px solid <%= colors.Border["1"].fallback.color %>;
+  border: 1px solid <%= colors.Border["1"].main.color %>;
   background-color: <%= colors.Surface["3"].color %>;
 }
 
@@ -31,10 +32,4 @@
   .ui-kit-block__buffer {
     margin: auto;
   }
-}
-
-@media(min-width: 0px) {
-  .ui-kit-block__inner {
-    border: 1px solid <%= colors.Border["1"].main.color %>;
-  }  
 }
