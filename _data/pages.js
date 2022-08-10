@@ -45,7 +45,6 @@ module.exports = async function() {
 
         if(page.content.rendered.includes('http://maps.google.com/')) {
           page.content.rendered = page.content.rendered.replace('http://maps.google.com/', 'https://maps.google.com/');
-          // page.content.rendered = page.content.rendered.replace('AIzaSyBgt54I4XhM2YR3uOJC-HZMv2VBbE6fq9M', 'AIzaSyCVQNxyCzIcxiMbgXX4n02gzow9oYd5aV4');
         }
     
         let description = page.excerpt.rendered;

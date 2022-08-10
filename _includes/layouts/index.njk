@@ -24,7 +24,14 @@
             <h2 class="visually-hidden">Last posts</h2>
             <ul class="list-reset posts">
             {% for post in pagination.items %}
-              <li class="post">
+              <li class="post"
+              {% for tag in post.tags %}
+                {% if tag.name === 'arabic' %}
+                  lang="ar"
+                  dir="rtl"                
+                {% endif %}
+              {% endfor %}
+              >
                 <div class="post__block">
                   <div class="spacer-40"></div>
                   <article>
@@ -41,14 +48,14 @@
                     </header>
 
                     <footer>
-                      <div class="post__info">
+                      <div class="post__info" dir="ltr">
                         {% responsive %}
                           {% container "80_80_80_80_80", "", "centered" %}
                             {% responsive "ul", "tags list-reset" %}
                               {% responsive "li", "tag" %}
                                 {% pictureSvgPng "img/icons/calendar.svg", "Posted on: ", "20", "16" %}
                                 <a class="secondary__link" href="/{{ post.slug }}/">
-                                <time datetime="{{ post.modified }}">{% formatDate post.modified %} </time>
+                                <time datetime="{{ post.date }}">{% formatDate post.date %} </time>
                                 </a>
                               {% endresponsive %}
                               {% if post.categories.length > 0 %}
@@ -97,7 +104,9 @@
                         {% if post.jetpack_featured_media_url %}
                         <div class="spacer-32"></div>
                         <a href="/{{ post.slug }}/">
-                        <img src="{{ post.jetpack_featured_media_url }}" alt="{{ post.title.rendered }}">
+                        <div class="post__img">
+                          <img src="{{ post.jetpack_featured_media_url }}" alt="{{ post.title.rendered }}">
+                        </div>
                         </a>
                         <div class="spacer-40"></div>
                         {% endif %}

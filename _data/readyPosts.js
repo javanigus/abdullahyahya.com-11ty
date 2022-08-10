@@ -76,14 +76,13 @@ module.exports = async function() {
     post.tags = newTags;
     post.authors = newAuthors;
 
-    let year = new Date(post.modified).getFullYear();
-    let month = new Date(post.modified).getMonth() + 1;
+    let year = new Date(post.date).getFullYear();
+    let month = new Date(post.date).getMonth() + 1;
     if(month < 10) {
       month = '0' + month;
     }
 
     post.slug = `${year}/${month}/${post.slug}`
-
   })
 
   posts.all = wpPosts;

@@ -15,14 +15,14 @@
       </header>
 
       <footer>
-        <div class="post__info">
+        <div class="post__info" dir="ltr">
           {% responsive %}
             {% container "80_80_80_80_80", "", "centered" %}
               {% responsive "ul", "tags list-reset" %}
                 {% responsive "li", "tag" %}
                   {% pictureSvgPng "img/icons/calendar.svg", "Posted on: ", "20", "16" %}
                   <a class="secondary__link" href="/{{ post.slug }}/">
-                    <time>{{ post.modified }}</time>
+                    <time>{{ post.date }}</time>
                   </a>
                 {% endresponsive %}
                 {% if post.categories.length > 0 %}
