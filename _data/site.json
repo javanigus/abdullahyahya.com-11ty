@@ -1,4 +1,5 @@
 {
+  "src_prefix": "http://www.abdullahyahya.com/wp-json/wp/v2/",
   "host": "https://adorable-panda-f944bc.netlify.app/",
   "name": "Abdullah Yahya Blog",
   "language": "en"

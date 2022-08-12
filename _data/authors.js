@@ -1,11 +1,13 @@
 const fs = require('fs');
+const site = require('./site.json');
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
-module.exports = async function() {
-  const url = "http://abdullahyahya.com/wp-json/wp/v2/users?per_page=100";
+const url = `${site.src_prefix}users?per_page=100`;
 
+module.exports = async function() {
   const data = await EleventyFetch(url, {
-    type: "json"
+    type: "json",
+    duration: "1d" // save for 1 day
   });
 
   const authors = [];
@@ -25,7 +27,7 @@ module.exports = async function() {
   }
 
   authors.forEach(author => {
-    fs.writeFileSync(`authors/${author.slug}.md`, `---
+    const frontmatter = `---
 layout: layouts/taxonomy.njk
 title: ${author.name}
 description: Posts from author ${author.name}
@@ -34,7 +36,18 @@ pagination:
   size: 10
 permalink: "author/${author.slug}{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
 taxonomy: Author
----`);
+---`
+
+    if (!fs.existsSync(`authors/${author.slug}.md`)) {
+      fs.writeFileSync(`authors/${author.slug}.md`, frontmatter);
+    } else {
+      fs.readFile(`authors/${author.slug}.md`, 'utf8', (err, data) => {
+
+        if(data !== frontmatter) {
+          fs.writeFileSync(`authors/${author.slug}.md`, frontmatter);
+        }
+      });
+    }
   })
 
   return data;

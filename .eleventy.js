@@ -693,6 +693,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("parseNum", function(value) {
     return value.replace(/\D/g,'');
   });
+  eleventyConfig.addFilter('dump', obj => {
+    const getCircularReplacer = () => {
+      const seen = new WeakSet();
+      return (key, value) => {
+        if (typeof value === "object" && value !== null) {
+          if (seen.has(value)) {
+            return;
+          }
+          seen.add(value);
+        }
+        return value;
+      };
+    };
+  
+    return JSON.stringify(obj, getCircularReplacer(), 4);
+  });
 
   // design-system
   eleventyConfig.addShortcode("assets_block", assets_block);

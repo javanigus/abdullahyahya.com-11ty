@@ -1,5 +1,5 @@
 {% responsive "", "share-block" %}
-<div class="share-block__inner" dir="ltr">
+<div class="share-block__inner"{% if isArabic %} lang="{{ site.language }}" dir="ltr"{% endif %}>
   <p>SHARE THIS:</p>
   {% responsive "ul", "list-reset" %}
     <li>

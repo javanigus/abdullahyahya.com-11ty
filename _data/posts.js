@@ -1,7 +1,9 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
+const site = require('./site.json');
+
+const url = `${site.src_prefix}posts?per_page=100`;
 
 module.exports = async function() {
-  const url = "http://www.abdullahyahya.com/wp-json/wp/v2/posts?per_page=100";
   const maxPages = 100;
   let page = 1;
 
@@ -11,7 +13,8 @@ module.exports = async function() {
     const urlWithPage = `${url}&page=${page}`
     try {
       data = await EleventyFetch(urlWithPage, {
-        type: "json"
+        type: "json",
+        duration: "1d" // save for 1 day
       })
     } catch(e) {
       break

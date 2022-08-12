@@ -1,3 +1,9 @@
+{%- set isArabic = false -%}
+{%- for tag in post.tags -%}
+  {%- if tag.name === 'arabic' -%}
+    {%- set isArabic = true -%}
+  {%- endif -%}
+{%- endfor -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
 <head>
@@ -7,7 +13,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/index.css">
-
   {% include 'partials/js-detect.njk' %}
 </head>
 <body>
@@ -20,14 +25,7 @@
       {% responsive %}
         {% container "100_100_83_83_83", "", "centered" %}
         <main>
-          <div class="post"
-            {% for tag in post.tags %}
-              {% if tag.name === 'arabic' %}
-                lang="ar"
-                dir="rtl"
-              {% endif %}
-            {% endfor %}
-           >
+          <div class="post"{% if isArabic %} lang="ar" dir="rtl" {% endif %}>
             <div class="post__block">
               <div class="spacer-40"></div>
               {% responsive %}
@@ -39,7 +37,7 @@
                   </h3>
                 {% end_container %}
               {% endresponsive %}
-              <div class="post__info" dir="ltr">
+              <div class="post__info"{% if isArabic %} lang="{{ site.language }}" dir="ltr"{% endif %}>
                 {% responsive %}
                   {% container "80_80_80_80_80", "", "centered" %}
                     {% responsive "ul", "tags list-reset" %}

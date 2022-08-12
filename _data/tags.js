@@ -1,11 +1,13 @@
 const fs = require('fs');
+const site = require('./site.json');
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
-module.exports = async function() {
-  const url = "http://abdullahyahya.com/wp-json/wp/v2/tags?per_page=100";
+const url = `${site.src_prefix}tags?per_page=100`;
 
+module.exports = async function() {
   const data = await EleventyFetch(url, {
-    type: "json"
+    type: "json",
+    duration: "1d" // save for 1 day
   });
 
   const tags = [];
@@ -25,7 +27,7 @@ module.exports = async function() {
   }
 
   tags.forEach(tag => {
-    fs.writeFileSync(`tags/${tag.slug}.md`, `---
+    const frontmatter = `---
 layout: layouts/taxonomy.njk
 title: ${tag.name}
 description: Posts from tag ${tag.name}
@@ -34,7 +36,18 @@ pagination:
   size: 10
 permalink: "tag/${tag.slug}{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
 taxonomy: Tag
----`);
+---`
+
+    if (!fs.existsSync(`tags/${tag.slug}.md`)) {
+      fs.writeFileSync(`tags/${tag.slug}.md`, frontmatter);
+    } else {
+      fs.readFile(`tags/${tag.slug}.md`, 'utf8', (err, data) => {
+
+        if(data !== frontmatter) {
+          fs.writeFileSync(`tags/${tag.slug}.md`, frontmatter);
+        }
+      });
+    }
   })
 
   return data;

@@ -1,11 +1,13 @@
 const fs = require('fs');
+const site = require('./site.json');
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
-module.exports = async function() {
-  const url = "http://abdullahyahya.com/wp-json/wp/v2/categories?per_page=100";
+const url = `${site.src_prefix}categories?per_page=100`;
 
+module.exports = async function() {
   const data = await EleventyFetch(url, {
-    type: "json"
+    type: "json",
+    duration: "1d" // save for 1 day
   });
 
   const categories = [];
@@ -25,7 +27,7 @@ module.exports = async function() {
   }
 
   categories.forEach(category => {
-    fs.writeFileSync(`categories/${category.slug}.md`, `---
+    const frontmatter = `---
 layout: layouts/taxonomy.njk
 title: ${category.name}
 description: Posts from category ${category.name}
@@ -34,7 +36,18 @@ pagination:
   size: 10
 permalink: "category/${category.slug}{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber | plus: 1 }}{% endif %}/"
 taxonomy: Category
----`);
+---`
+
+    if (!fs.existsSync(`categories/${category.slug}.md`)) {
+      fs.writeFileSync(`categories/${category.slug}.md`, frontmatter);
+    } else {
+      fs.readFile(`categories/${category.slug}.md`, 'utf8', (err, data) => {
+
+        if(data !== frontmatter) {
+          fs.writeFileSync(`categories/${category.slug}.md`, frontmatter);
+        }
+      });
+    }
   })
 
   return data;
