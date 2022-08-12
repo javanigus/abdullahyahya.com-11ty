@@ -670,7 +670,12 @@ function traverse(arr) {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("node_modules/**");
+  eleventyConfig.ignores.add(".cache");
+  eleventyConfig.ignores.add("_site");
+
   eleventyConfig.addPassthroughCopy("sitemap.xml");
   eleventyConfig.addPassthroughCopy("sitemap.txt");
 
