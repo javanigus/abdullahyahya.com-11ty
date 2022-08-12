@@ -6,4 +6,3 @@ pagination:
   alias: single_page
 permalink: "/{{ single_page.slug }}/"
 ---
-{{ pages.default | log }}
