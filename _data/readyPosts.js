@@ -72,9 +72,11 @@ module.exports = async function() {
     newAuthors.push(obj);
     posts["author"][newAuthors[0].slug].push(post);
 
-    post.categories = newCategories;
-    post.tags = newTags;
-    post.authors = newAuthors;
+    if (typeof post.categories[0] === "number") {
+      post.categories = newCategories;
+      post.tags = newTags;
+      post.authors = newAuthors;
+    }
 
     post.slug = post.link.replace('http://www.abdullahyahya.com/', '');
   })
