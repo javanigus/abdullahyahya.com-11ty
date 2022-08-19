@@ -1,5 +1,5 @@
 const colors = require('./colors.json');
-const FONT_FAMILY = 'Noto Sans,Arial,sans-serif';
+const FONT_FAMILY = 'Noto Sans, Arial, sans-serif';
 
 module.exports = {
   body: {

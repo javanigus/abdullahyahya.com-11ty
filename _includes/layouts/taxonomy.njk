@@ -74,7 +74,7 @@
                                 {% responsive "ul", "list-reset responsive" %}
                                   {% for category in post.categories %}
                                     <li{%if loop.last%} class="last" {% endif %}>
-                                    <a class="secondary__link" href="/category/{{ category.slug }}/">
+                                    <a class="secondary__link" href="/category/{{ category.slug }}">
                                       {{ category.name }}{%if loop.last%}{% else %},{% endif %}
                                     </a>
                                     </li>

@@ -1,5 +1,14 @@
+const { promisify } = require('util');
+const { resolve } = require('path');
+const fs = require('fs');
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
+const { SitemapStream } = require('sitemap');
+
+const readdir = promisify(fs.readdir);
+const stat = promisify(fs.stat);
+
+const siteData = require("./_data/site.json");
 const responsiveData = require("./_data/responsive.json");
 const containersData = require("./_data/containers.json");
 const maxWidthData = require("./_data/max_width.json");
@@ -7,6 +16,15 @@ const bufferData = require("./_data/buffer.json")
 const SCREENS = responsiveData.SCREEN_WIDTHES;
 
 // Utils function
+
+async function getFiles(dir) {
+  const subdirs = await readdir(dir);
+  const files = await Promise.all(subdirs.map(async (subdir) => {
+    const res = resolve(dir, subdir);
+    return (await stat(res)).isDirectory() ? getFiles(res) : res;
+  }));
+  return files.reduce((a, f) => a.concat(f), []);
+}
 
 function compareNumeric(a, b) {
   if (a > b) return 1;
@@ -724,4 +742,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("traverse", traverse);
   eleventyConfig.addShortcode("figure", figure);
   eleventyConfig.addShortcode("formatDate", formatDate);
+
+  eleventyConfig.on('eleventy.after', async () => {
+    getFiles('./_site/')
+    .then((files) => {
+      const conditions = ['\\js\\', '\\css\\', '\\img\\', '\\fonts\\'];
+      const sitemap = new SitemapStream({ hostname: siteData.host });
+      const writeStream = fs.createWriteStream('./_site/sitemap.xml');
+      sitemap.pipe(writeStream);
+      
+      const indexPageId = files.findIndex(file => file.includes('_site\\index.html'))
+      const indexPage = files.splice(indexPageId, 1);
+      files.unshift(indexPage[0]);
+
+      files.forEach(file => {
+        if(!conditions.some(el => file.includes(el))) {
+          file = (file.slice(file.indexOf('_site'))).replaceAll('\\', '/').replaceAll('_site/', siteData.host).replaceAll('index.html', ''); 
+          sitemap.write({ url: file });
+        }
+      })
+      sitemap.end();
+    })
+    .catch(e => console.error(e));
+  });
 }

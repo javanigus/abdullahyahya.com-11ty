@@ -9,7 +9,7 @@
   }
 
   window.onscroll = function() {
-    if(widnowWidth < 960 || aside.offsetHeight === windowHeight) {
+    if(widnowWidth < 960 || Math.ceil(windowHeight) - Math.ceil(aside.offsetHeight) <= 1) {
       aside.className = 'aside';
       return
     }
