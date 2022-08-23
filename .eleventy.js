@@ -746,7 +746,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.on('eleventy.after', async () => {
     getFiles('./_site/')
     .then((files) => {
-      const conditions = ['\\js\\', '\\css\\', '\\img\\', '\\fonts\\'];
+      const conditions = ['\\sitemap.xml', '\\robots.txt', '\\js\\', '\\css\\', '\\img\\', '\\fonts\\'];
       const sitemap = new SitemapStream({ hostname: siteData.host });
       const writeStream = fs.createWriteStream('./_site/sitemap.xml');
       sitemap.pipe(writeStream);
@@ -762,6 +762,12 @@ module.exports = function (eleventyConfig) {
         }
       })
       sitemap.end();
+      fs.writeFileSync('./_site/robots.txt', `User-agent: *
+Allow: /
+
+Sitemap: ${siteData.host}sitemap.xml    
+      `);
+
     })
     .catch(e => console.error(e));
   });
