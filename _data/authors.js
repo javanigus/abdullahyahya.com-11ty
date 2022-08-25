@@ -2,6 +2,8 @@ const fs = require('fs');
 const site = require('./site.json');
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
+// this is a test comment
+
 const url = `${site.src_prefix}users?per_page=100`;
 
 module.exports = async function() {
