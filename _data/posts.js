@@ -14,7 +14,7 @@ module.exports = async function() {
     try {
       data = await EleventyFetch(urlWithPage, {
         type: "json",
-        duration: "1d" // save for 1 day
+        duration: "1s" // save for 1 day
       })
     } catch(e) {
       break
