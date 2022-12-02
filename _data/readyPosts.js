@@ -81,6 +81,12 @@ module.exports = async function() {
     post.slug = post.link.replace('http://www.abdullahyahya.com/', '');
     post.jetpack_featured_media_url = post.jetpack_featured_media_url.replace('http://www.abdullahyahya.com/', 'https://ik.imagekit.io/dumani/');
     post.jetpack_featured_media_url = post.jetpack_featured_media_url + "?tr=w-691,h-438";
+    post.content.rendered = post.content.rendered.replaceAll('http://www.abdullahyahya.com/wp-content/', 'http://ik.imagekit.io/dumani/wp-content/');
+    
+    /* if (post.id == "3175") {
+      console.log(post.content.rendered);
+    } */
+    
   })
 
   posts.all = wpPosts;
