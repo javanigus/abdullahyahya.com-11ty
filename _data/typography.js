@@ -100,22 +100,19 @@ module.exports = {
       'margin' : '0 0 32px 0',
       'padding' : `0`,
       'font-family': `${FONT_FAMILY}`,
-      'font-size' : '15px',
-      'line-height': '24px',
+      'font-size' : '14px',
+      'line-height': 1.7,
       'font-weight': '400',
       'color': colors['On Surface']['4'].color,
     },
     'phone': {
-      'font-size' : '19px',
-      'line-height' : '32px',
+      'font-size' : '14px'
     },
     'tablet': {
-      'font-size' : '15px',
-      'line-height' : '24px',
+      'font-size' : '14px'
     },
     'laptop': {
-      'font-size' : '19px',
-      'line-height': '32px',
+      'font-size' : '17px'
     }
   },
   '.post__content ul': {
@@ -123,22 +120,19 @@ module.exports = {
       'margin' : '0 0 32px 19px',
       'padding' : `0`,
       'font-family': `${FONT_FAMILY}`,
-      'font-size' : '15px',
-      'line-height': '24px',
+      'font-size' : '14px',
+      'line-height': 1.7,
       'font-weight': '400',
       'color': colors['On Surface']['4'].color,
     },
     'phone': {
-      'font-size' : '19px',
-      'line-height' : '32px',
+      'font-size' : '14px'
     },
     'tablet': {
-      'font-size' : '15px',
-      'line-height' : '24px',
+      'font-size' : '14px'
     },
     'laptop': {
-      'font-size' : '19px',
-      'line-height': '32px',
+      'font-size' : '17px'
     }
   },
   '.post__content ol': {
