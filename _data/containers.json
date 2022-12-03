@@ -20,6 +20,13 @@
     "laptop": 0.71,
     "desktop": 0.71
   },
+  "90_90_71_71_71": {
+    "default": 0.90,
+    "phone": 0.90,
+    "tablet": 0.71,
+    "laptop": 0.71,
+    "desktop": 0.71
+  },
   "100_100_83_83_83": {
     "default": 1,
     "phone": 1,

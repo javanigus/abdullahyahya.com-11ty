@@ -17,6 +17,17 @@
 .post__info {
   padding: 32px 0 16px;
   background-color: <%= colors.Surface["3"].color %>;
+  font-size: 15px;
+}
+
+@media (max-width: <%= responsive.MEDIA.tablet - 1 %>px) {
+  .post__info {
+    font-size: 13px;
+  }
+}
+
+.tag {
+  align-items: center;
 }
 
 .post__buffer {
@@ -75,6 +86,18 @@
 .post__content img {
   border-radius: 5px;
   width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: <%= responsive.MEDIA.tablet - 1 %>px) {
+
+}
+
+@media (max-width: <%= responsive.MEDIA.phone - 1 %>px) {
+  h1,
+  .h1 {
+    font-size: 22px;
+  }
 }
 
 .wp-block-code code {
